@@ -8,6 +8,9 @@ public class Percolation {
     private int opensites = 0;
     private final WeightedQuickUnionUF uf;
     private int cnt = 0;
+    private final int topsite;
+    private final int botsite;
+
 
     // creates n-by-n grid, with all sites initially blocked
     public Percolation(int n) {
@@ -24,6 +27,9 @@ public class Percolation {
         }
 
         uf = new WeightedQuickUnionUF(size * size + 2);
+
+        topsite = size * size;
+        botsite = topsite + 1;
 
         if (cnt != 0)
             print();
@@ -84,14 +90,14 @@ public class Percolation {
             }
         }
 
-        if (row == 0 && r != uf.find(size * size)) {
-            uf.union(p, size * size);
+        if (row == 0 && r != uf.find(topsite)) {
+            uf.union(p, topsite);
             // System.out.println("connected to virt top: " + row + " " + col
             //                            + " " + uf.find(p));
 
         }
-        if (row == size - 1 && r != uf.find(size * size + 1)) {
-            uf.union(p, size * size + 1);
+        if (row == size - 1 && r != uf.find(botsite)) {
+            uf.union(p, botsite);
             // System.out.println("connected to virt bot: " + row + " " + col
             //                            + " " + uf.find(p));
         }
@@ -124,18 +130,7 @@ public class Percolation {
         row = row - 1;
         col = col - 1;
 
-        int r = uf.find(row * size + col);
-        cnt += 1;
-
-        for (int j = 0; j < size; ++j) {
-            if (isOpen(1, j + 1) && r == uf.find(j)) {
-                // System.out.println("j: " + j);
-                cnt += 1;
-                return true;
-            }
-            cnt += 1;
-        }
-        return false;
+        return uf.find(row * size + col) == uf.find(topsite);
     }
 
     // returns the number of open sites
@@ -150,7 +145,7 @@ public class Percolation {
         //         return true;
         // }
         // return false;
-        return uf.find(size * size) == uf.find(size * size + 1);
+        return uf.find(topsite) == uf.find(botsite);
     }
 
     // test client (optional)
@@ -207,6 +202,7 @@ public class Percolation {
             System.out.println("cnt= " + p.cnt);
             p.open(StdRandom.uniform(n) + 1, StdRandom.uniform(n) + 1);
             System.out.println("open cnt= " + p.cnt);
+            PercolationVisualizer.draw(p, n);
         }
         System.out.println("cnt= " + p.cnt);
     }
