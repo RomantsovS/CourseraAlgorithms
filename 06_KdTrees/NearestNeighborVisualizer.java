@@ -14,6 +14,7 @@
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.Point2D;
 import edu.princeton.cs.algs4.StdDraw;
+import edu.princeton.cs.algs4.StdOut;
 
 public class NearestNeighborVisualizer {
 
@@ -37,14 +38,25 @@ public class NearestNeighborVisualizer {
         while (true) {
 
             // the location (x, y) of the mouse
-            // double x = StdDraw.mouseX();
-            // double y = StdDraw.mouseY();
-            double x = 0.9;
-            double y = 0.9;
+            double x = StdDraw.mouseX();
+            double y = StdDraw.mouseY();
+            // double x = 0.699;
+            // double y = 0.654;
             Point2D query = new Point2D(x, y);
 
-            // draw all of the points
             StdDraw.clear();
+
+            StdDraw.setPenColor(StdDraw.YELLOW);
+            StdDraw.setPenRadius(0.03);
+
+            StdDraw.point(query.x(), query.y());
+
+            if (StdDraw.isMousePressed()) {
+                StdOut.println(query.toString());
+            }
+
+            // draw all of the points
+
             StdDraw.setPenColor(StdDraw.BLACK);
             StdDraw.setPenRadius(0.01);
             brute.draw();

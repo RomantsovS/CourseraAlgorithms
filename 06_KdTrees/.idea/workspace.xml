@@ -79,7 +79,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/sergei/Documents/CourseraAlgorithms/06_KdTrees"
+    "last_opened_file_path": "/home/sergei/Documents/CourseraAlgorithms/06_KdTrees",
+    "settings.editor.selected.configurable": "preferences.editor"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -87,7 +88,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.KdTree">
+  <component name="RunManager" selected="Application.NearestNeighborVisualizer">
     <configuration name="KdTree" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="KdTree" />
       <module name="Algorithms, Part I" />
@@ -163,21 +164,5 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
     </layout>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/PointSET.java</url>
-          <line>96</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/KdTree.java</url>
-          <line>133</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

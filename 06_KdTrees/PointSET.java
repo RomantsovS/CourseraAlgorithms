@@ -40,7 +40,6 @@ public class PointSET {
 
     // draw all points to standard draw
     public void draw() {
-        StdDraw.clear(StdDraw.BOOK_LIGHT_BLUE);
         StdDraw.setPenColor(StdDraw.BLACK);
         double penRadius = 0.01;
         StdDraw.setPenRadius(penRadius);

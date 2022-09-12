@@ -122,6 +122,9 @@ public class KdTree {
         if (n == null)
             return;
 
+        if (!rect.intersects(n.rect))
+            return;
+
         if (rect.contains(n.p))
             res.add(n.p);
 
@@ -130,7 +133,7 @@ public class KdTree {
 
     }
 
-    private Point2D nearestR(Node n, Point2D p, Point2D top, double minDist) {
+    private Point2D nearestR(Node n, Point2D p, Point2D top, double minDist, int dimension) {
         if (n == null)
             return null;
 
@@ -140,16 +143,61 @@ public class KdTree {
             minDist = md;
         }
 
+        double lenLeft = Double.POSITIVE_INFINITY;
+        double lenRight = Double.POSITIVE_INFINITY;
+
         if (n.lb != null) {
-            double v = n.lb.rect.distanceSquaredTo(p);
-            if (v < minDist)
-                top = nearestR(n.lb, p, top, minDist);
+            lenLeft = n.lb.rect.distanceSquaredTo(p);
         }
         if (n.rt != null) {
-            double v = n.rt.rect.distanceSquaredTo(p);
-            if (v < minDist)
-                top = nearestR(n.rt, p, top, minDist);
+            lenRight = n.rt.rect.distanceSquaredTo(p);
         }
+
+        if (dimension == 0) {
+            if (p.x() < n.p.x()) {
+                if (lenLeft < minDist) {
+                    top = nearestR(n.lb, p, top, minDist, (dimension + 1) % 2);
+                    minDist = p.distanceSquaredTo(top);
+                }
+                if (lenRight < minDist) {
+                    top = nearestR(n.rt, p, top, minDist, (dimension + 1) % 2);
+                    minDist = p.distanceSquaredTo(top);
+                }
+            }
+            else {
+                if (lenRight < minDist) {
+                    top = nearestR(n.rt, p, top, minDist, (dimension + 1) % 2);
+                    minDist = p.distanceSquaredTo(top);
+                }
+                if (lenLeft < minDist) {
+                    top = nearestR(n.lb, p, top, minDist, (dimension + 1) % 2);
+                    minDist = p.distanceSquaredTo(top);
+                }
+            }
+        }
+        else {
+            if (p.y() < n.p.y()) {
+                if (lenLeft < minDist) {
+                    top = nearestR(n.lb, p, top, minDist, (dimension + 1) % 2);
+                    minDist = p.distanceSquaredTo(top);
+                }
+                if (lenRight < minDist) {
+                    top = nearestR(n.rt, p, top, minDist, (dimension + 1) % 2);
+                    minDist = p.distanceSquaredTo(top);
+                }
+            }
+            else {
+                if (lenRight < minDist) {
+                    top = nearestR(n.rt, p, top, minDist, (dimension + 1) % 2);
+                    minDist = p.distanceSquaredTo(top);
+                }
+                if (lenLeft < minDist) {
+                    top = nearestR(n.lb, p, top, minDist, (dimension + 1) % 2);
+                    minDist = p.distanceSquaredTo(top);
+                }
+            }
+        }
+
         return top;
     }
 
@@ -165,6 +213,8 @@ public class KdTree {
 
     // add the point to the set (if it is not already in the set)
     public void insert(Point2D p) {
+        if (p == null)
+            throw new IllegalArgumentException();
         if (isEmpty()) {
             root = new Node(p, new RectHV(0, 0, 1, 1));
             ++size;
@@ -179,6 +229,8 @@ public class KdTree {
 
     // does the set contain point p?
     public boolean contains(Point2D p) {
+        if (p == null)
+            throw new IllegalArgumentException();
         return containsR(root, p, 0);
     }
 
@@ -189,6 +241,8 @@ public class KdTree {
 
     // all points that are inside the rectangle (or on the boundary)
     public Iterable<Point2D> range(RectHV rect) {
+        if (rect == null)
+            throw new IllegalArgumentException();
         ArrayList<Point2D> res = new ArrayList<>();
 
         rangeR(root, rect, res);
@@ -198,11 +252,13 @@ public class KdTree {
 
     // a nearest neighbor in the set to point p; null if the set is empty
     public Point2D nearest(Point2D p) {
+        if (p == null)
+            throw new IllegalArgumentException();
         if (isEmpty())
             return null;
 
         Point2D top = new Point2D(-1, -1);
-        top = nearestR(root, p, top, Double.POSITIVE_INFINITY);
+        top = nearestR(root, p, top, Double.POSITIVE_INFINITY, 0);
         return top;
     }
 
@@ -218,10 +274,11 @@ public class KdTree {
 
             Point2D p = new Point2D(x, y);
             pointSet.insert(p);
-            StdOut.println(pointSet.contains(p));
-            StdOut.println(pointSet.size());
         }
 
         pointSet.draw();
+
+        for (Point2D p : pointSet.range(new RectHV(0.52, 0.01, 0.75, 0.23)))
+            StdOut.println("range res: " + p.toString());
     }
 }
