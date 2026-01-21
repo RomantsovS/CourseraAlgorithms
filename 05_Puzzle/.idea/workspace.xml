@@ -39,6 +39,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
   <component name="ProjectFrameBounds">
     <option name="x" value="106" />
     <option name="y" value="23" />
@@ -77,21 +80,24 @@
     <option name="showExcludedFiles" value="false" />
     <option name="showModules" value="false" />
     <option name="sortByType" value="true" />
+    <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/sergei/Documents/CourseraAlgorithms/04_Collinear_points&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.startup.tasks&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.PuzzleChecker.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/roman/source/repos/CourseraAlgorithms/05_Puzzle",
+    "settings.editor.selected.configurable": "preferences.startup.tasks"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Solver">
+  <component name="RunManager" selected="Application.PuzzleChecker">
     <configuration name="Board" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Board" />
       <module name="Algorithms, Part I" />
@@ -155,6 +161,12 @@
       <option name="PROGRAM_PARAMETERS" value="input6.txt" />
       <method v="2" />
     </configuration>
+    <configuration name="PuzzleChecker" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="PuzzleChecker" />
+      <module name="Algorithms, Part I" />
+      <option name="PROGRAM_PARAMETERS" value="puzzle00.txt" />
+      <method v="2" />
+    </configuration>
     <configuration name="RandomWord" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="RandomWord" />
       <module name="Algorithms, Part I" />
@@ -186,6 +198,15 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <created>1768198163317</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1768198163317</updated>
+    </task>
+    <servers />
+  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />

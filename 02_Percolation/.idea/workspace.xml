@@ -39,6 +39,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
   <component name="ProjectFrameBounds">
     <option name="x" value="106" />
     <option name="y" value="23" />
@@ -77,14 +80,22 @@
     <option name="showExcludedFiles" value="false" />
     <option name="showModules" value="false" />
     <option name="sortByType" value="true" />
+    <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;last_opened_file_path&quot;: &quot;/home/sergei/Documents/Samopal/CourseraAlgorithms/02_Percolation&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CollidingDisks.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "last_opened_file_path": "C:/Users/roman/source/repos/CourseraAlgorithms/02_Percolation",
+    "settings.editor.selected.configurable": "terminal"
   }
-}</component>
-  <component name="RunManager" selected="Application.Percolation">
+}]]></component>
+  <component name="RunManager" selected="Application.CollidingDisks">
+    <configuration name="CollidingDisks" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="CollidingDisks" />
+      <module name="Algorithms, Part I" />
+      <method v="2" />
+    </configuration>
     <configuration name="HelloGoodbye" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="HelloGoodbye" />
       <module name="Algorithms, Part I" />
@@ -133,6 +144,15 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <created>1768197892462</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1768197892462</updated>
+    </task>
+    <servers />
+  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />

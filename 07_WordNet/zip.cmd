@@ -1,0 +1,1 @@
+powershell Compress-Archive Outcast.java,SAP.java,WordNet.java wordnet.zip -Force
